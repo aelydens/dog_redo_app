@@ -24,4 +24,13 @@ Make an Appointment for <%= @dog.name %> Below:
   <%= f.submit %>
 <% end %>
 
+<hr>
+Appointments
+
+<% @dog.appointments.each do |appointment| %>
+  <%= appointment.time %>
+  <%= appointment.vet.name %>
+<% end %>
+
+<hr>
 <%= link_to "Back to Owner", user_path(@dog.user) %>
