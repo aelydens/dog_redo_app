@@ -14,4 +14,14 @@ Toys
 
 <hr>
 
+Make an Appointment for <%= @dog.name %> Below:
+
+<%= form_for([@dog, @appointment]) do |f| %>
+  <%= f.label :time %>
+  <%= f.time_field :time %>
+  <%= f.label :vet_id, "Vet Name" %>
+  <%= f.collection_select(:vet_id, Vet.all, :id, :name) %>
+  <%= f.submit %>
+<% end %>
+
 <%= link_to "Back to Owner", user_path(@dog.user) %>

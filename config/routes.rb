@@ -6,5 +6,6 @@ Rails.application.routes.draw do
 
   resources :dogs, only: [:show] do
     resources :toys, only: [:create]
+    resources :appointments, only: [:create]
   end
 end

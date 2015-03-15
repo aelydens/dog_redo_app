@@ -18,6 +18,7 @@ class DogsController < ApplicationController
   def show
     @dog = Dog.find(params[:id])
     @toy = Toy.new #toy new is here because the new toy form is on the dog#show page
+    @appointment = Appointment.new
   end
 
   private
