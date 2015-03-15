@@ -1,0 +1,17 @@
+<%= form_for([@dog, @toy]) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit "Create New Toy for #{@dog.name}" %>
+<% end %>
+
+<hr>
+Toys
+<hr>
+
+<% @dog.toys.each do |toy| %>
+<%= toy.name %>
+<% end %>
+
+<hr>
+
+<%= link_to "Back to Owner", user_path(@dog.user) %>
